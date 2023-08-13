@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>作成</title>
+</head>
+<body>
+<h1>新規作成ページ</h1>
+<form th:action="@{/memo}" th:method="post" th:object="${memoForm}">
+  <div>
+    <label for="title">タイトル</label>
+    <input id="title" type="text" th:field="*{title}">
+  </div>
+  <div>
+    <label for="content">内容</label>
+    <textarea id="content" th:field="*{content}" rows="10"></textarea>
+  </div>
+  <div>
+    <button type="submit">作成</button>
+    <a th:href="@{/memo}">キャンセル</a>
+  </div>
+</form>
+</body>
+</html>

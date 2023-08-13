@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>詳細</title>
+</head>
+<body>
+<div th:each="memo : ${memoDetail}">
+  <h1>メモの詳細</h1>
+  <div>
+    <h2>タイトル：</h2>
+    <h3 th:text="${memo.title}"></h3>
+  </div>
+  <div>
+    <h2>内容：</h2>
+    <h3 th:text="${memo.content}"></h3>
+  </div>
+  <a th:href="@{/memo}">一覧に戻る</a>
+</div>
+</body>
+</html>

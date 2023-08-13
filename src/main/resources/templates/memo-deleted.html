@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>ゴミ箱</title>
+</head>
+<body>
+<h1>ゴミ箱</h1>
+<div>
+  <a th:href="@{/memo}">一覧に戻る</a>
+  <a th:href="@{/memo/removeAll}">全て空にする</a>
+</div>
+<div th:each="memo : ${deletedMemoList}" th:object="${memo}">
+  <ul>
+    <li>
+      [[${memo.title}]]
+      <a th:href="@{/memo/cancelDelete/{id}(id=${memo.id})}">元に戻す</a>
+      <a th:href="@{/memo/remove/{id}(id=${memo.id})}">完全に削除</a>
+    </li>
+  </ul>
+</div>
+</body>
+</html>

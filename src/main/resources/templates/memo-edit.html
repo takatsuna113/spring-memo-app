@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>編集</title>
+</head>
+<body>
+<h1>編集ページ</h1>
+<div>
+  <form th:action="@{/memo/edit/{id}(id=${memoForm.id})}" th:method="post" th:object="${memoForm}">
+    <div th:each="memo : ${memoDetail}" th:object="${memo}">
+      <div>
+        <label for="title">タイトル</label>
+        <input id="title" type="text" name="title" th:value="${memo.title}">
+      </div>
+      <div>
+        <label for="content">内容</label>
+        <textarea id="content" name="content" rows="10">[[${memo.content}]]</textarea>
+      </div>
+      <div>
+        <button type="submit">更新</button>
+        <a th:href="@{/memo}">キャンセル</a>
+      </div>
+    </div>
+  </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+:root {
+    /* --main-bg-color: #fdf6ea; */
+    --main-bg-color: #f9f6f3;
+    --primary-text-color: #585858;
+    --secondary-text-color: white;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.5rem;
+    width: 100%;
+    background: var(--main-bg-color);
+}
+
+.header a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+}
+
+.header .app-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-left: 1rem;
+}
+
+nav {
+    margin-right: 3rem;
+}
+
+nav a {
+    padding: 0.7rem;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    transition: .3s;
+}
+
+nav a:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background: #ecebeb;
+}
+
+nav a i {
+    margin-right: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.container {
+    display: flex;
+    background: var(--main-bg-color);
+}
+
+.sidebar {
+    margin-top: 3.5rem;
+    padding: 0.8rem 0.5rem 0;
+    min-height: 83vh;
+    max-height: 83vh;
+    min-width: 32vw;
+    transition: .5s;
+    overflow-y: scroll;
+}
+
+.sidebar .sidebar-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    height: 3rem;
+    padding: 0.2rem 1rem 0;
+    transition: .3s;
+}
+
+.sidebar .sidebar-items:hover {
+    background: #ecebeb;
+    border-radius: 10px;
+    box-shadow: 0px 1px 7px 1px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .sidebar-items.active {
+    background: #ecebeb;
+    border-radius: 10px;
+    box-shadow: 0px 1px 7px 1px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .sidebar-items > div a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+}
+
+.sidebar .sidebar-items .memo-title {
+    padding-left: 0.4rem;
+    font-size: 1rem;
+    width: 30%;
+    overflow: hidden;
+}
+
+.sidebar .sidebar-items .memo-action {
+    padding-right: 0.3rem;
+}
+
+.sidebar .sidebar-items .memo-action .detail-memo {
+    margin-right: 0.2rem;
+    padding: 0.5rem 0.5rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.sidebar .sidebar-items .memo-action .detail-memo:hover {
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .sidebar-items .memo-action .edit-memo {
+    margin-right: 0.2rem;
+    padding: 0.5rem 0.5rem;
+    background: #f8fff3;
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.35);
+    transition: .3s;
+}
+
+.sidebar .sidebar-items .memo-action .edit-memo:hover {
+    background: #e4fcd0;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .sidebar-items .memo-action .delete-memo {
+    padding: 0.5rem 0.5rem;
+    background: #fcf8f7;
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.35);
+    transition: .3s;
+}
+
+.sidebar .sidebar-items .memo-action .delete-memo:hover {
+    background: #f7e3e1;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.container .detail {
+    color: var(--primary-text-color);
+    margin: 4.5rem 1rem 1.5rem;
+    padding: 1rem 1rem;
+    height: 75vh;
+    min-width: 52vw;
+    background: white;
+    border: solid 1px #e1dfdf;
+    border-radius: 10px;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.container .hidden {
+    font-size: 0;
+    visibility: hidden;
+}
+
+.container .detail .title .title-text {
+    padding: 0.5rem 1rem 0;
+    height: 10vh;
+    width: 53vw;
+    font-size: 1.2rem;
+    border-bottom: solid 1.5px #e1dfdf;
+    overflow-x: scroll;
+}
+
+.container .detail .content {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    height: 53vh;
+    width: 53vw;
+    font-size: 1rem;
+    border: solid 0.5px #e1dfdf;
+    overflow: scroll;
+    overflow-wrap: break-word;
+}
+
+.container .detail .content-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5.5vh;
+    font-size: 0.7rem;
+    margin: 0.2rem 0.5rem 0;
+    /* background: gray; */
+}
+
+.container .detail .content-bottom a {
+    text-decoration: none;
+    color: var(--primary-text-color);
+    border-radius: 5px;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.1rem;
+    background: #ededed;
+    transition: .3s;
+}
+
+.container .detail .content-bottom a:hover {
+    background: #d4d4d4;
+
+}
+
+.container .detail .content-bottom .time {
+    display: inline-flex;
+}
+
+.container .detail .time .created-at {
+    margin-right: 1rem;
+}
+
