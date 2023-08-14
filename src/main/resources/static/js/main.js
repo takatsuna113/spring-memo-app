@@ -1,5 +1,5 @@
 /** サイドバーのフォーカス切り替え */
-window.onload = function () {
+window.onload = function() {
   const currentUrl = location.href;
   // activeクラスを追加するクラスを取得
   const sidebar = document.querySelectorAll('.sidebar-items');
@@ -13,4 +13,13 @@ window.onload = function () {
     }
   });
 
+}
+
+if (location.href.includes('edit')) {
+  const editInput = document.querySelector('.form-title input#title');
+  editInput.onkeydown = function (e) {
+    if (e.key === 'Enter') {
+      return false;
+    }
+  }
 }

@@ -28,12 +28,11 @@ public class MemoController {
 
     /**
      * メモ一覧ページを表示
-     * @param model モデル
      * @return メモ一覧ページ
      */
     @GetMapping
-    public String showMemoList(@ModelAttribute(name = "memoList") List<Memo> memoList) {
-//        model.addAttribute("memoList", memoService.getMemoList());
+    public String showMemoList(
+        @ModelAttribute(name = "memoList") List<Memo> memoList) {
         return "memo-list";
     }
 

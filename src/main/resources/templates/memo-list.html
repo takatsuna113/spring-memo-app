@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>メモアプリ</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style-main.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 </head>
 <body>
 
   <header class="header">
-    <a class="app-title" th:href="@{/memo}">メモ</a>
+    <a class="app-title" th:href="@{/memo}">メモ一覧</a>
     <nav>
-      <a th:href="@{/memo/create}"><i class='bx bx-edit'></i>新規</a>
+      <a th:href="@{/memo/create}"><i class='bx bx-edit'></i>new</a>
       <a th:href="@{/memo/garbage}"><i class='bx bxs-box'></i>ゴミ箱</a>
     </nav>
   </header>
@@ -25,21 +26,20 @@
           <p th:text="*{title}"></p>
         </div>
         <div class="memo-action">
-          <a class="detail-memo" th:href="@{/memo/detail/{id}(id=${memo.id})}">詳細</a>
-          <a class="edit-memo" th:href="@{/memo/edit/{id}(id=${memo.id})}">編集</a>
-          <a class="delete-memo" th:href="@{/memo/delete/{id}(id=${memo.id})}">削除</a>
+          <a class="detail-memo" th:href="@{/memo/detail/{id}(id=${memo.id})}"><i class="bi bi-book"></i></a>
+          <a class="edit-memo" th:href="@{/memo/edit/{id}(id=${memo.id})}"><i class="bi bi-pencil-fill"></i></a>
+          <a class="delete-memo" th:href="@{/memo/delete/{id}(id=${memo.id})}"><i class="bi bi-trash"></i></a>
         </div>
       </div>
     </div>
 
     <!-- 詳細 -->
     <div class="detail" th:each="memo : ${memoDetail}">
-      <p class="hidden">[[ ${memo.id} ]]</p>
       <div class="title">
         <p class="title-text" th:text="${memo.title}"></p>
       </div>
       <div class="content">
-        <p th:text="${memo.content}"></p>
+        <textarea name="content" readonly>[[${memo.content}]]</textarea>
       </div>
       <div class="content-bottom">
         <a th:href="@{/memo}">非表示</a>
