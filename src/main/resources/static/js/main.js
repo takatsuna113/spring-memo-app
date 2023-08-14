@@ -15,11 +15,26 @@ window.onload = function() {
 
 }
 
+// 編集・新規作成画面でEnterによるフォーム送信を制御
 if (location.href.includes('edit') || location.href.includes('create')) {
   const editInput = document.querySelector('.form-title input#title');
+  // inputタグ内ではEnter押下時の送信処理を禁止
   editInput.onkeydown = function (e) {
     if (e.key === 'Enter') {
       return false;
     }
   }
+}
+
+// 
+const modalOpen = () => {
+  const modal = document.querySelector('.confirm');
+  modal.style.visibility = 'visible';
+  modal.style.zIndex = '100';
+}
+
+const modalClose = () => {
+  const modal = document.querySelector('.confirm');
+  modal.style.visibility = 'hidden';
+  modal.style.zIndex = '-1';
 }

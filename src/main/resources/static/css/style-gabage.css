@@ -10,6 +10,10 @@
     --secondary-text-color: white;
 }
 
+body {
+    position: relative;
+}
+
 .header {
     position: fixed;
     top: 0;
@@ -62,6 +66,101 @@ nav a:nth-child(1) {
 
 nav a:nth-child(1):hover {
     color: var(--primary-text-color);
+}
+
+.confirm {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.confirm-modal {
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    height: 30%;
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background: #faf9f9;
+    border: solid 1px var(--primary-text-color);
+    border-radius: 4px;
+}
+
+.confirm-modal .confirm-title {
+    width: 100%;
+    text-align: right;
+    padding-right: 0.8rem;
+}
+
+.confirm-modal .confirm-title a {
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.confirm-modal .confirm-title a:hover {
+    background: #ecebeb;
+}
+
+.confirm-modal .confirm-content {
+    width: 100%;
+    text-align: center;
+    color: var(--primary-text-color);
+}
+
+.confirm-modal .delete-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    width: 100%;
+    padding-bottom: 0.9rem;
+}
+
+.confirm-modal .delete-action a:nth-child(1) {
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.35);
+    background: #fedfdc;
+    text-decoration: none;
+    color: var(--primary-text-color);
+    margin-right: 0.7rem;
+    width: 25%;
+    text-align: center;
+    transition: .3s;
+}
+
+.confirm-modal .delete-action a:nth-child(1):hover {
+    background: #febab4;
+    box-shadow: none;
+}
+
+.confirm-modal .delete-action a:nth-child(2) {
+    padding: 0.2rem 0.4rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--primary-text-color);
+    background: #ededed;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.confirm-modal .delete-action a:nth-child(2):hover {
+    background: #d4d4d4;
+    box-shadow: none;
 }
 
 .container {
@@ -118,6 +217,7 @@ nav a:nth-child(1):hover {
 }
 
 .container .garbage-list .garbage-item .remove {
+    cursor: pointer;
     background: #fdf3f0;
 }
 
