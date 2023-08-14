@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+:root {
+    --main-bg-color: #f9f6f3;
+    --primary-text-color: #585858;
+    --secondary-text-color: white;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.5rem;
+    width: 100%;
+    padding-left: 1rem;
+    background: var(--main-bg-color);
+}
+
+.header a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+}
+
+.header .app-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-left: 1rem;
+}
+
+nav {
+    margin-right: 3rem;
+}
+
+nav a {
+    padding: 0.7rem;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    transition: .3s;
+}
+
+nav a:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background: #ecebeb;
+}
+
+nav a i {
+    margin-right: 0.3rem;
+    font-size: 0.9rem;
+}
+
+nav a:nth-child(1) {
+    color: #b0b0b0;
+    transition: .3s;
+}
+
+nav a:nth-child(1):hover {
+    color: var(--primary-text-color);
+}
+
+.container {
+    height: 85vh;
+    width: 100%;
+    margin-top: 3rem;
+    padding: 2rem 0 0 2rem;
+    background: var(--main-bg-color);
+}
+
+.container .garbage-list {
+    max-height: 93%;
+    width: 93%;
+    border-radius: 3px;
+    background: white;
+    overflow-y: scroll;
+}
+
+.container .garbage-list .garbage-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.3rem;
+    padding: 0.7rem;
+    border-radius: 3px;
+    transition: .3s;
+}
+
+.container .garbage-list .garbage-item:hover {
+    background: #ecebeb;
+}
+
+.container .garbage-list .garbage-item p {
+    width: 75%;
+    padding: 0 0.3rem;
+    overflow-x: hidden;
+}
+
+.container .garbage-list .garbage-item a {
+    display: inline-block;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.9rem;
+    color: var(--primary-text-color);
+    text-decoration: none;
+    border: solid 1px #e1dfdf;
+    border-radius: 3px;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+    transition: .3s;
+}
+
+.container .garbage-list .garbage-item .cancel:hover {
+    background: #f3f3f3;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.container .garbage-list .garbage-item .remove {
+    background: #fdf3f0;
+}
+
+.container .garbage-list .garbage-item .remove:hover {
+    background: #f7e3e1;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+}

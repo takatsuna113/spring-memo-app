@@ -118,13 +118,13 @@
     margin-right: 3rem;
     border: none;
     border-radius: 5px;
-    background: #f8fff3;
+    background: #ddedfd;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
     transition: .3s;
 }
 
 .action button:hover {
-    background: #e4fcd0;
+    background: #bcdaf8;
     box-shadow: none;
 }
 

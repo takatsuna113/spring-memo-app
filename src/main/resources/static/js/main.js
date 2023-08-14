@@ -15,7 +15,7 @@ window.onload = function() {
 
 }
 
-if (location.href.includes('edit')) {
+if (location.href.includes('edit') || location.href.includes('create')) {
   const editInput = document.querySelector('.form-title input#title');
   editInput.onkeydown = function (e) {
     if (e.key === 'Enter') {

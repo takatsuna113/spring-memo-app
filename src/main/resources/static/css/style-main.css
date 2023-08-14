@@ -5,7 +5,6 @@
 }
 
 :root {
-    /* --main-bg-color: #fdf6ea; */
     --main-bg-color: #f9f6f3;
     --primary-text-color: #585858;
     --secondary-text-color: white;
@@ -20,13 +19,13 @@
     align-items: center;
     height: 3.5rem;
     width: 100%;
+    padding-left: 1rem;
     background: var(--main-bg-color);
 }
 
 .header a {
     color: var(--primary-text-color);
     text-decoration: none;
-    padding-left: 1.5rem;
 }
 
 .header .app-title {
@@ -101,7 +100,7 @@ nav a i {
 .sidebar .sidebar-items .memo-title {
     padding-left: 0.4rem;
     font-size: 1rem;
-    width: 30%;
+    width: 60%;
     overflow: hidden;
 }
 
@@ -144,7 +143,7 @@ nav a i {
 
 .sidebar .sidebar-items .memo-action .delete-memo {
     padding: 0rem 0.4rem;
-    background: #fcf8f7;
+    background: #fdf3f0;
     border-radius: 10px;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.35);
     transition: .3s;
