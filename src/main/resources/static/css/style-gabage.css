@@ -10,10 +10,6 @@
     --secondary-text-color: white;
 }
 
-body {
-    position: relative;
-}
-
 .header {
     position: fixed;
     top: 0;
