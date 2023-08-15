@@ -37,6 +37,40 @@ body {
     margin-left: 1rem;
 }
 
+.header .search {
+    position: relative;
+    height: 60%;
+    width: 40%;
+}
+
+.header .search input {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    height: 90%;
+    width: 70%;
+    padding: 0 0.9rem 0 1.8rem;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    background: var(--main-bg-color);
+    color: var(--primary-text-color);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.35);
+    transition: .3s;
+}
+
+.header .search input:focus {
+    box-shadow: none;
+    background: white;
+}
+
+.header .search i {
+    position: absolute;
+    top: 27%;
+    left: 12%;
+    color: var(--primary-text-color);
+}
+
 nav {
     margin-right: 3rem;
 }

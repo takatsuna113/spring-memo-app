@@ -9,6 +9,18 @@
     WHERE
       deleted = false
   </select>
+  <select id="getMemoListByWord" resultType="Memo" parameterType="String">
+    SELECT
+      *
+    FROM
+      memo
+    WHERE
+      deleted = false
+    AND
+      title LIKE CONCAT('%', #{words}, '%')
+    OR
+      content LIKE CONCAT('%', #{words}, '%')
+  </select>
   <insert id="save">
     INSERT INTO
       memo (title, content)

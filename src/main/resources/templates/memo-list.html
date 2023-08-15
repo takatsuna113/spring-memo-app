@@ -10,7 +10,13 @@
 <body>
 
   <header class="header">
-    <a class="app-title" th:href="@{/memo}">メモ一覧</a>
+    <a class="app-title" th:href="@{/memo/home}">メモ一覧</a>
+    <div class="search">
+      <form th:action="@{/memo/home}">
+        <input type="text" placeholder="メモを検索">
+        <i class='bx bx-search'></i>
+      </form>
+    </div>
     <nav>
       <a th:href="@{/memo/create}"><i class='bx bx-edit'></i>new</a>
       <a th:href="@{/memo/garbage}"><i class='bx bxs-box'></i>ゴミ箱</a>
@@ -29,7 +35,6 @@
           <a class="detail-memo" th:href="@{/memo/detail/{id}(id=${memo.id})}"><i class="bi bi-book"></i></a>
           <a class="edit-memo" th:href="@{/memo/edit/{id}(id=${memo.id})}"><i class="bi bi-pencil-fill"></i></a>
           <a class="delete-memo" th:href="@{/memo/delete/{id}(id=${memo.id})}"><i class="bi bi-trash"></i></a>
-<!--          <a onclick="deleteMemo()" class="delete-memo"><i class="bi bi-trash"></i></a>-->
         </div>
       </div>
     </div>
@@ -43,7 +48,7 @@
         <textarea name="content" readonly>[[${memo.content}]]</textarea>
       </div>
       <div class="content-bottom">
-        <a th:href="@{/memo}">非表示</a>
+        <a th:href="@{/memo/home}">非表示</a>
         <div class="time">
           <p class="created-at">作成日：[[ ${memo.createdAt} ]]</p>
           <p>更新日：[[ ${memo.updatedAt} ]]</p>

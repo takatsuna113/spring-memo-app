@@ -20,6 +20,13 @@ public interface MemoMapper {
     List<Memo> getMemoList();
 
     /**
+     * 検索文字列に部分一致するメモを取得
+     * @param words 検索文字列
+     * @return メモ一覧
+     */
+    List<Memo> getMemoListByWord(String words);
+
+    /**
      * メモの保存処理
      * @param memoForm メモフォーム
      */

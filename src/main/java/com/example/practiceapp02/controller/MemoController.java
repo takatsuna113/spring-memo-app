@@ -30,9 +30,26 @@ public class MemoController {
      * メモ一覧ページを表示
      * @return メモ一覧ページ
      */
-    @GetMapping
+    @GetMapping("/home")
     public String showMemoList(
         @ModelAttribute(name = "memoList") List<Memo> memoList) {
+        return "memo-list";
+    }
+
+    /**
+     * 検索文字列でメモを検索・表示
+     * @param memoList メモリスト
+     * @param words 検索文字列
+     * @param model モデル
+     * @return メモ一覧ページ
+     */
+    @GetMapping("/home/{words}")
+    public String searchMemo(@ModelAttribute(name = "memoList") List<Memo> memoList, @PathVariable("words") String words, Model model) {
+        List<Memo> memoListContainWords =  memoService.getMemoListByWord(words);
+        if (memoListContainWords.isEmpty()) {
+            return "redirect:/memo/home";
+        }
+        model.addAttribute("memoList", memoListContainWords);
         return "memo-list";
     }
 
@@ -44,7 +61,7 @@ public class MemoController {
     @PostMapping
     public String createMemo(MemoForm memoForm) {
         memoService.createMemo(memoForm);
-        return "redirect:/memo";
+        return "redirect:/memo/home";
     }
 
     /**
@@ -101,7 +118,7 @@ public class MemoController {
     @GetMapping("/delete/{id}")
     public String deleteMemo(@PathVariable("id") long id) {
         memoService.deleteMemo(id);
-        return "redirect:/memo";
+        return "redirect:/memo/home";
     }
 
     /**

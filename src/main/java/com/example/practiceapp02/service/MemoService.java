@@ -22,9 +22,17 @@ public class MemoService {
      * メモ一覧を取得
      * @return メモ一覧
      */
-
     public List<Memo> getMemoList() {
         return memoMapper.getMemoList();
+    }
+
+    /**
+     * 検索文字列に部分一致するメモ一覧を取得
+     * @param words 検索文字列
+     * @return メモ一覧
+     */
+    public List<Memo> getMemoListByWord(String words) {
+        return memoMapper.getMemoListByWord(words);
     }
 
     /**

@@ -68,3 +68,14 @@ const emptyModalClose = () => {
   emptyModal.style.visibility = 'hidden';
   emptyModal.style.zIndex = '-1';
 }
+
+// 検索欄に入力した文字列でリクエストURLを生成
+if (location.href.includes('home') || location.href.includes('detail')) {
+  const form = document.querySelector('form');
+  const baseUrl = form.getAttribute('action') + '/'
+  const searchArea = document.querySelector('input');
+  searchArea.addEventListener('input', () => {
+    const requestUrl = baseUrl + searchArea.value;
+    form.action = requestUrl;
+  })
+}
