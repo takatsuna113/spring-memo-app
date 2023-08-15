@@ -26,29 +26,45 @@ if (location.href.includes('edit') || location.href.includes('create')) {
   }
 }
 
-// ゴミ箱画面のモーダル表示
+// 個別の完全削除モーダル表示
 if (location.href.includes('garbage')) {
   const memoList = document.querySelectorAll('.remove');
   memoList.forEach((memo) => {
     memo.addEventListener('click', () => {
       // 「完全に削除」が押された箇所のメモIDをモーダルに渡す
-      modalOpen(memo.classList[1]);
+      rmModalOpen(memo.classList[1]);
     })
   });
   // モーダル表示
-  const modalOpen = (memoId) => {    
-    const modal = document.querySelector('.confirm');
+  const rmModalOpen = (memoId) => {    
+    const rmModal = document.querySelector('.remove-confirm');
     // href属性(リクエストURL)にidを付与するaタグを取得
-    const rmTargetAnchor = modal.children[0].children[2].children[0];
+    const rmTargetAnchor = rmModal.children[0].children[2].children[0];
     rmTargetAnchor.setAttribute('href', `remove/${memoId}`);
-    modal.style.visibility = 'visible';
-    modal.style.zIndex = '100';
+    rmModal.style.visibility = 'visible';
+    rmModal.style.zIndex = '100';
   }
 }
 
 // モーダル非表示
-const modalClose = () => {
-  const modal = document.querySelector('.confirm');
-  modal.style.visibility = 'hidden';
-  modal.style.zIndex = '-1';
+const rmModalClose = () => {
+  const rmModal = document.querySelector('.remove-confirm');
+  rmModal.style.visibility = 'hidden';
+  rmModal.style.zIndex = '-1';
+}
+
+// ゴミ箱を空にするモーダル表示
+const emptyModalOpen = () => {
+  const emptyModal = document.querySelector('.empty-confirm');
+  const rmTargetAnchor = emptyModal.children[0].children[2].children[0];
+  rmTargetAnchor.setAttribute('href', `removeAll/`);
+  emptyModal.style.visibility = 'visible';
+  emptyModal.style.zIndex = '100';
+}
+
+// ゴミ箱を空にするモーダル非表示
+const emptyModalClose = () => {
+  const emptyModal = document.querySelector('.empty-confirm');
+  emptyModal.style.visibility = 'hidden';
+  emptyModal.style.zIndex = '-1';
 }

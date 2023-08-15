@@ -12,7 +12,8 @@
   <header class="header">
     <a class="app-title" th:href="@{/memo/garbage}">ゴミ箱</a>
     <nav>
-      <a th:href="@{/memo/removeAll}">全て空にする</a>
+      <a class="empty" onclick="emptyModalOpen()">全て空にする</a>
+<!--      <a th:href="@{/memo/removeAll}">全て空にする</a>-->
       <a th:href="@{/memo}"><i class="bi bi-backspace-fill"></i>一覧へ</a>
     </nav>
   </header>
@@ -20,28 +21,43 @@
   <div class="container">
     <div class="garbage-list">
       <div class="garbage-item" th:each="memo : ${deletedMemoList}" th:object="${memo}">
-        <p hidden="">[[${memo.id}]]</p>
         <p>[[${memo.title}]]</p>
         <div class="action">
           <a class="cancel" th:href="@{/memo/cancelDelete/{id}(id=${memo.id})}">元に戻す</a>
-          <a th:classappend="${memo.id}" class="remove" href="javascript:void(0)">完全に削除</a>
+          <a class="remove" th:classappend="${memo.id}">完全に削除</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- モーダル -->
-  <div class="confirm">
+  <!-- 個別の完全削除モーダル -->
+  <div class="remove-confirm">
     <div class="confirm-modal">
       <div class="confirm-title">
-        <a onclick="modalClose()"><i class="bi bi-x"></i></a>
+        <a onclick="rmModalClose()"><i class="bi bi-x"></i></a>
       </div>
       <div class="confirm-content">
         <p>本当に削除しますか？</p>
       </div>
       <div class="delete-action">
         <a>削除</a>
-        <a onclick="modalClose()">キャンセル</a>
+        <a onclick="rmModalClose()">キャンセル</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ゴミ箱を空にするモーダル -->
+  <div class="empty-confirm">
+    <div class="confirm-modal">
+      <div class="confirm-title">
+        <a onclick="emptyModalClose()"><i class="bi bi-x"></i></a>
+      </div>
+      <div class="confirm-content">
+        <p>ゴミ箱を空にしますか？</p>
+      </div>
+      <div class="delete-action">
+        <a>空にする</a>
+        <a onclick="emptyModalClose()">キャンセル</a>
       </div>
     </div>
   </div>
