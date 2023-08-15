@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 :root {
@@ -160,18 +160,20 @@ nav a:nth-child(1):hover {
 }
 
 .container {
-    height: 85vh;
+    height: 87vh;
     width: 100%;
     margin-top: 3rem;
-    padding: 2rem 0 0 2rem;
+    padding: 1rem 0 0 2rem;
     background: var(--main-bg-color);
 }
 
 .container .garbage-list {
-    max-height: 93%;
+    padding: 0 0.5rem;
+    height: 95%;
     width: 93%;
-    border-radius: 3px;
+    border-radius: 5px;
     background: white;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
     overflow-y: scroll;
 }
 
@@ -179,10 +181,11 @@ nav a:nth-child(1):hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0.3rem;
+    margin-top: 0.7rem;
     padding: 0.7rem;
     border-radius: 3px;
     transition: .3s;
+    max-height: 10%;
 }
 
 .container .garbage-list .garbage-item:hover {
